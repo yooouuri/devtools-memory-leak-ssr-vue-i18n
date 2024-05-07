@@ -8,9 +8,11 @@ const isTest = process.env.VITEST
 
 export async function createServer(
   root = process.cwd(),
-  isProd = process.env.NODE_ENV === 'production',
+  isProd = true,
   hmrPort,
 ) {
+  console.log({ NODE_ENV: process.env.NODE_ENV })
+
   const __dirname = path.dirname(fileURLToPath(import.meta.url))
   const resolve = (p) => path.resolve(__dirname, p)
 
